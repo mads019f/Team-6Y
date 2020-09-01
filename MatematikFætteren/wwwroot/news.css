@@ -1,0 +1,23 @@
+.news {
+ margin: auto;
+ width: 70%;
+ background-color: white;
+ display: block;
+}
+
+.news h2 {
+ padding: 20px; 
+}
+
+.news h5 {
+  padding: 20px;
+}
+
+.news p {
+  padding: 20px;
+}
+
+
+.news ol li {
+  padding: 30px;
+}

@@ -1,0 +1,32 @@
+.footer {
+	display:flex;
+    align-items:center;
+    justify-content:center;    
+  	background-color: #8dc0ff;
+  	color: white;
+  	
+}
+
+.adresse {
+    flex: 25%;
+    padding: 20px;
+  	
+}
+
+.Support {
+    flex: 25%;
+    padding: 20px;
+  
+}
+
+
+.fill1 {
+    flex: 25%;
+    padding: 20px;
+}
+
+.fill2 {
+    flex: 25%;
+    padding: 20px;
+  
+}

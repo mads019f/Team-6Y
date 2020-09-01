@@ -1,0 +1,130 @@
+<html>
+ <head>
+   <title>Matematik</title>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/slideshow.css">
+	<link rel="stylesheet" type="text/css" href="/css/news.css">
+	<link type="text/css" href="/css/navbar.css" rel="stylesheet">
+ 	<link type="text/css" href="/css/footer.css" rel="stylesheet">
+  </head>
+  <body style="background-color:#f1f1f1">
+         
+    
+    <div id="container">
+
+      <nav>
+        <div id="logo">
+		<img src="Loco-removebg-preview.png" id="img1">
+          <div class="logotext">
+            <h1>Matematikfætteren</h1>
+          </div>
+        </div>
+        <ul class="leftlist">
+          <li><a href="#">Hjem</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Opgaver</a></li>
+          <li><a href="#">Leaderboard</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Opret Bruger</a></li>
+          <li><a href="#">Log ind</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+   <div>
+	  <img class="mySlides" src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg">
+	  <img class="mySlides" src="https://api.time.com/wp-content/uploads/2015/02/cats.jpg?quality=85&w=1024&h=512&crop=1">
+	  <img class="mySlides" src="https://ichef.bbci.co.uk/news/1024/cpsprodpb/83D7/production/_111515733_gettyimages-1208779325.jpg">
+	</div>
+    
+   <br>
+    
+    <div class="news">
+      <h2>Denne side er under opbygning</h2>
+      <h5>26-08-2020 </h5>
+      <p>Dette website udvikles i forbindelse med 3. semster projektet på Datamatiker uddannelsen UCL, Odense.
+      Har du nogle spørgsmål, kan du se kontaktoplysninger i bunden af siden.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Under_construction.svg" height="100px" width="100px" >
+    </div>
+    
+    <br>
+    
+     <div class="news">
+      <h2>Title heading</h2>
+      <h5>Date </h5>
+      <p>Abcdef </p>
+       <ol> 
+         <li> 1 </li>
+         <li> 2 </li>
+       </ol>
+      
+       
+    </div>
+    
+    <br>
+    
+     <div class="news">
+      <h2>Title heading</h2>
+      <h5>Title description </h5>
+      <p>Some text </p>
+    </div>
+    
+    <br>
+    
+    <div class="news">
+      <h2>Title heading</h2>
+      <h5> Title description </h5>
+      <p>Some text </p>
+    </div>
+    
+    <br>
+    	
+    
+    <div class="footer">
+      <div class="fill1">
+        
+      </div>  
+      
+      <div class="adresse">
+        <h2>Adresse </h2>
+        <h5>Emdrupvej 115A, 3 og 4 sal </h5>
+      </div>
+      
+      
+      <div class="Support">
+        <h2>Telefon </h2>
+        <h5>44 55 33 22 </h5>
+        <h5>matematikfætter@gmail.com</h5>
+      </div>  	
+      
+      <div class="fill2">
+        
+      </div>  	
+    </div>
+    
+
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+    
+  </body>
+  <script src="slideshow.js"></script>
+</html>
+
