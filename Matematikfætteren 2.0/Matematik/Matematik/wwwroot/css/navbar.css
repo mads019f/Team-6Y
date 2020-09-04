@@ -65,7 +65,6 @@ body {
 #container > nav > ul > li > a {
   position:relative;
 /*   background-color:red; */
-  margin: 0 20px;
     color:white;
 }
 #container > nav > ul > li:hover {
