@@ -10,15 +10,22 @@ namespace Matematik.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index ( )
+        public IActionResult Index()
         {
             return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error ( )
+        public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult UserSignUp()
+        {
+            User user = new User("BøsseMail","123","123","124124124");
+           
+            return View(user);
         }
     }
 }

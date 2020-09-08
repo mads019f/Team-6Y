@@ -57,6 +57,10 @@ namespace Matematik
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    name: "SignUp",
+                    template:"{controller=Home}/{action=UserSignUp}/{id?}");
             });
         }
     }
