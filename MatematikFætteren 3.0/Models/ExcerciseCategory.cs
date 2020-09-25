@@ -9,6 +9,7 @@ namespace Matematik.Models
     {
         public string Title { get; set; }
         public enum Difficulty {Easy, Medium, Intermediate, Hard, Expert }
+        public int ExcerciseCategoryId { get; set; }
 
     }
 }

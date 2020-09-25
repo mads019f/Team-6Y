@@ -11,5 +11,6 @@ namespace Matematik.Models
         public string Description { get; set; }
         public string Solution { get; set; }
         public string Answer { get; set; }
+        public int ExcerciseId { get; set; }
     }
 }
