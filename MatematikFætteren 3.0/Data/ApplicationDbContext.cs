@@ -11,8 +11,20 @@ namespace MatematikFætteren_3._0.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Forum> forum { get; set; } 
-        public DbSet<Comment> comment { get; set; }
+       
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Excercise> Excercises { get; set; }
+        public DbSet<ExcerciseCategory> ExcerciseCategories { get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<PremiumExcercise> PremiumExcercises { get; set; }
+        public DbSet<ForumCategory> ForumCategories { get; set; }
+
+
+
+
+
+
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

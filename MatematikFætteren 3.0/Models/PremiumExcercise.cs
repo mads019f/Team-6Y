@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Matematik.Models
 {
-    public class PremiumExcercises
+   public class PremiumExcercise
     {
         [Required]
         public string Description { get; set; }
@@ -17,7 +17,7 @@ namespace Matematik.Models
         [Required]
         public string Answer { get; set; }
 
-        public int PremiumExcersicesId { get; set; }
+        public int PremiumExcerciseId { get; set; }
 
     }
 }
