@@ -20,9 +20,13 @@ namespace MatematikFætteren_3._0.Data
         public DbSet<PremiumExcercise> PremiumExcercises { get; set; }
         public DbSet<ForumCategory> ForumCategories { get; set; }
 
+        
+
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
     }
 }
