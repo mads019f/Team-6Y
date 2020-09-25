@@ -14,7 +14,6 @@ namespace MatematikFætteren_3._0.Data
         public DbSet<Forum> forum { get; set; } 
         public DbSet<Comment> comment { get; set; }
 
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
