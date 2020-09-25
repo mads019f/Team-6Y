@@ -16,6 +16,8 @@ namespace Matematik.Models
         public string CompanyEmail { get; set; }
         [Required]
         public string Answer { get; set; }
-        
+
+        public int PremiumExcersicesId { get; set; }
+
     }
 }

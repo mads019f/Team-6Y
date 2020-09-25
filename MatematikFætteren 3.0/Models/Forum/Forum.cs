@@ -7,5 +7,7 @@ namespace Matematik.Models.Forum
 {
     public class Forum
     {
+        public int ForumId { get; set; }
+        
     }
 }

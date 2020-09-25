@@ -7,7 +7,8 @@ namespace Matematik.Models
 {
     public class ExcerciseCategory
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
         public enum Difficulty {Easy, Medium, Intermediate, Hard, Expert }
+
     }
 }

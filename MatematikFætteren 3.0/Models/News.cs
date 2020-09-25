@@ -15,6 +15,9 @@ namespace Matematik.Models
         public DateTime Date = DateTime.Now;
 
         [StringLength(300, MinimumLength =10, ErrorMessage ="Du skal skrive mellem 10 og 300 bogstaver")]
-        public string Body { get; set; }
+        public string Description { get; set; }
+        public int NewsId { get; set; }
+        public string UserId { get; set; }
+
     }
 }
