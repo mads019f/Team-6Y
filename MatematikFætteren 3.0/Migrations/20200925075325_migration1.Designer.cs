@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatematikFætteren_3._0.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200925074651_migration1")]
+    [Migration("20200925075325_migration1")]
     partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
