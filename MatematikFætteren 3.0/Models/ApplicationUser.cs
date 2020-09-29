@@ -8,9 +8,7 @@ namespace MatematikFætteren_3._0.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        
         public int ExcerciseRating { get; set; } = 0;
-        public int ForumRating { get; set; } = 1000;    
-        
+        public int ForumRating { get; set; } = 1000;
     }
 }

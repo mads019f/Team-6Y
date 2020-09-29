@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MatematikFætteren_3._0.Migrations
 {
-    public partial class migration1 : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -95,9 +95,10 @@ namespace MatematikFætteren_3._0.Migrations
                 {
                     NewsId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(maxLength: 20, nullable: false),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
                     Description = table.Column<string>(maxLength: 300, nullable: true),
-                    UserId = table.Column<string>(nullable: true)
+                    UserId = table.Column<string>(nullable: true),
+                    RowVersion = table.Column<byte[]>(rowVersion: true, nullable: true)
                 },
                 constraints: table =>
                 {

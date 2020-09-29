@@ -20,13 +20,18 @@ namespace MatematikFætteren_3._0.Data
         public DbSet<PremiumExcercise> PremiumExcercises { get; set; }
         public DbSet<ForumCategory> ForumCategories { get; set; }
 
-        
-
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
             Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<News>()
+                .Property(p => p.RowVersion).IsConcurrencyToken();
         }
     }
 }

@@ -1,0 +1,53 @@
+﻿@model MatematikFætteren_3._0.ViewModels.UserViewModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <p>Username</p>
+            </th>
+            <th>
+                <p>Email</p>
+            </th>
+            <th>
+                <p>Role</p>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => user.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Email)
+                </td>
+                <td>
+                    @{ 
+                        foreach(var userRole in Model.UserRoles)
+                        {
+                            if(user.Id == userRole.UserId)
+                            {
+                                foreach(var role in Model.Roles)
+                                {
+                                    if(userRole.RoleId == role.Id)
+                                    {
+                                        <p>@role.Name</p>
+                                    }
+                                }
+                            }
+                        }
+                    }
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.NewsId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@user.NewsId.NewsId">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

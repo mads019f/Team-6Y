@@ -33,11 +33,18 @@ body {
   margin: 0 auto;
   float: left;
 }
-.logotext {
-  position: relative;
-  float: right;
-  margin: 0px 120px 0px 0px;
+.logotext h1 {
+    padding-top:15px;
+    position: relative;
+    float: right;
+    margin: 0px 120px 0px 0px;
+    font-size: 25px;
 }
+
+/*h1 {
+
+    
+}*/
 
 #container > nav > ul {
   margin:0;
