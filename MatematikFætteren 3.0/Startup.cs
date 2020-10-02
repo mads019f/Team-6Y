@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MatematikFætteren_3._0.Models;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http;
 
 namespace MatematikFætteren_3._0
 {
@@ -39,6 +41,15 @@ namespace MatematikFætteren_3._0
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>();
 
+            // This lambda determines whether user consent for non-essential 
+            // cookies is needed for a given request.
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -50,6 +61,7 @@ namespace MatematikFætteren_3._0
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                
             }
             else
             {
@@ -59,8 +71,8 @@ namespace MatematikFætteren_3._0
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
-            app.UseRouting();
+            app.UseCookiePolicy();
+            app.UseRouting();   
 
             app.UseAuthentication();
             app.UseAuthorization();
