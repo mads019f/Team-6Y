@@ -17,33 +17,40 @@ namespace MatematikFætteren_3._0.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
-        private readonly IdentityContext _identityContext;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, RoleManager<IdentityRole> roleManager, IdentityContext identityContext)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, RoleManager<IdentityRole> roleManager)
         {
             _logger = logger;
             _context = context;
             _roleManager = roleManager;
-            _identityContext = identityContext;
         }
 
         public IActionResult Index()
         {
-            IdentityRole identityRole = new IdentityRole("user");
-            _roleManager.CreateAsync(identityRole);
+            //IdentityRole identityRole = new IdentityRole("user");
+            //_roleManager.CreateAsync(identityRole);
             return View();
         }
 
         [Authorize(Roles = "user")]
         public IActionResult Users()
         {
+            //string roleId = null;
+            //var roles = _context.UserRoles.ToList();
+            //foreach(var role in roles)
+            //{
+            //    if(role.UserId == _userManager.GetUserId(User))
+            //    {
+            //        roleId = role.RoleId;
+            //    }
+            //}
             UserViewModel userViewModel = new UserViewModel
             {
-                Users = _identityContext.Users.ToList(),
-                UserRoles = _identityContext.UserRoles.ToList(),
-                Roles = _identityContext.Roles.ToList()
+                Users = _context.Users.ToList(),
+                UserRoles = _context.UserRoles.ToList(),
+                Roles = _context.Roles.ToList()
             };
 
             return View(userViewModel);

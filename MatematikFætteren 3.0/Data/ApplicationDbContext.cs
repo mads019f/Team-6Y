@@ -9,8 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MatematikFætteren_3._0.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+       
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Excercise> Excercises { get; set; }
