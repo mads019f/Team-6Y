@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace MatematikFætteren_3._0.Migrations.Identity
+namespace MatematikFætteren_3._0.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20201002083442_twoContexts")]
-    partial class twoContexts
+    [Migration("20201006085420_InitialIdentity")]
+    partial class InitialIdentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

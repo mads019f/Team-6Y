@@ -13,6 +13,7 @@ namespace MatematikFætteren_3._0.Data
         public IdentityContext(DbContextOptions<IdentityContext> options)
             : base(options)
         {
+            Database.Migrate();
         }
     }
 }
