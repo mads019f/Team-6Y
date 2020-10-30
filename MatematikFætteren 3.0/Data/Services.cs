@@ -23,7 +23,7 @@ namespace MatematikFætteren_3._0.Data
         //Get
         public async Task<List<News>> GetAllNews()
         {
-            var uri = new Uri($"https://localhost:44381/news");
+            var uri = new Uri($"https://localhost:44332/news");
 
             var responseString = await _httpClient.GetStringAsync(uri);
 
@@ -36,7 +36,7 @@ namespace MatematikFætteren_3._0.Data
         //GetFromId
         public async Task<News> GetNewsFromId(int ?id)
         {
-            var uri = new Uri($"https://localhost:44381/news/{id}");
+            var uri = new Uri($"https://localhost:44332/news/{id}");
 
             var responseString = await _httpClient.GetStringAsync(uri);
 
@@ -50,7 +50,7 @@ namespace MatematikFætteren_3._0.Data
 
         public async Task DeleteNews(int ?id)
         {
-            var uri = new Uri($"https://localhost:44381/news/{id}");
+            var uri = new Uri($"https://localhost:44332/news/{id}");
 
             await _httpClient.DeleteAsync(uri);
 
@@ -60,7 +60,7 @@ namespace MatematikFætteren_3._0.Data
         public async Task PostNews(News news)
         {
 
-            var uri = new Uri($"https://localhost:44381/news");
+            var uri = new Uri($"https://localhost:44332/news");
 
             var content = JsonConvert.SerializeObject(news);
 
@@ -74,7 +74,7 @@ namespace MatematikFætteren_3._0.Data
         public async Task PutNews(News news, int ?id)
         {
 
-            var uri = new Uri($"https://localhost:44381/news/{id}");
+            var uri = new Uri($"https://localhost:44332/news/{id}");
 
             var content = JsonConvert.SerializeObject(news);
 

@@ -43,7 +43,7 @@ namespace MatematikFætteren_3._0
 
             services.AddHttpClient<Services>(client =>
             {
-                client.BaseAddress = new Uri("https://localhost:44381/");
+                client.BaseAddress = new Uri("https://localhost:44332");
             });
              
 
