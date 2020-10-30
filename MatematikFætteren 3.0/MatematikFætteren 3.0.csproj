@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-MatematikFætteren_3._0-778D347F-943B-4333-BAFC-CC2644433578</UserSecretsId>
     <RootNamespace>MatematikFætteren_3._0</RootNamespace>
+    <StartupObject>MatematikFætteren_3._0.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

@@ -41,6 +41,12 @@ namespace MatematikFætteren_3._0
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>();
 
+            services.AddHttpClient<Services>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44381/");
+            });
+             
+
             // This lambda determines whether user consent for non-essential 
             // cookies is needed for a given request.
             services.Configure<CookiePolicyOptions>(options =>
