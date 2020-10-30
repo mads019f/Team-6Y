@@ -10,6 +10,7 @@ namespace WebApi.Data
 {
     public class DomainDbContext : DbContext
     {
+        public DbSet<User> Users { get; set; }
         public DbSet<News> News { get; set; }
         public DomainDbContext ( DbContextOptions<DomainDbContext> options)
             : base(options)
