@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,8 +47,15 @@ namespace APICRUD.Middleware
             // Call the next delegate/middleware in the pipeline
             return this._next(context);
         }
+    }
 
-
+    public static class RequestDateMiddlewareExtension
+    {
+        public static IApplicationBuilder UseDateConverter(
+            this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<RequestDateMiddleWare>();
+        }
     }
 
     

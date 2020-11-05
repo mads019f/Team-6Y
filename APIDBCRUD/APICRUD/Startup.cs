@@ -78,7 +78,10 @@ namespace APICRUD
             }
 
             app.UseHttpsRedirection();
-            app.UseMiddleware<RequestDateMiddleWare>();
+
+            //Custom middleware
+            app.UseDateConverter();
+
             app.UseRouting();
 
             app.UseAuthorization();
