@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Forum\" />
-    <Folder Include="Models\WebModel\" />
   </ItemGroup>
 
 </Project>
