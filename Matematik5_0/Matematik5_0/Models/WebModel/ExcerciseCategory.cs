@@ -11,10 +11,10 @@ namespace Matematik5_0.Models.WebModel
     {
         public int ID { get; set; }
         public enum Difficulty {Easy, Medium, Hard}
-
-        [Required]
         public string Title { get; set; }
 
+        //Navigation Properties
+        public List<Excercise> Excercises { get; set; }
 
 
        

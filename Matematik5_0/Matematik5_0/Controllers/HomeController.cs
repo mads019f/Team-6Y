@@ -1,4 +1,5 @@
 ﻿using Matematik5_0.Models;
+using Matematik5_0.Models.WebModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,9 +13,11 @@ namespace Matematik5_0.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly Service _service;
 
-        public HomeController ( ILogger<HomeController> logger )
+        public HomeController ( ILogger<HomeController> logger, Service service)
         {
+            _service = service;
             _logger = logger;
         }
 
@@ -32,6 +35,13 @@ namespace Matematik5_0.Controllers
         public IActionResult Error ( )
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IEnumerable<ExcerciseCategory>> _Layout()
+        {
+            var excerciseCategory = await _service.GetExcerciseCategoriesAsync();
+
+            return excerciseCategory;
         }
     }
 }

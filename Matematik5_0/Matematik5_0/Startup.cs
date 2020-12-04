@@ -28,15 +28,19 @@ namespace Matematik5_0
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices ( IServiceCollection services )
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<UserDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                // .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<UserDbContext>();
+                
+            services.AddHttpClient<Service>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44356");
+            });
 
             services.AddControllersWithViews();
         }

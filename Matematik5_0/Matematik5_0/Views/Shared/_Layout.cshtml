@@ -1,52 +1,54 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@model IEnumerable<Matematik5_0.Models.WebModel.ExcerciseCategory> 
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Matematik5_0</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewData["Title"] - Matematik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/slideshow.css">
+    <link rel="stylesheet" type="text/css" href="~/css/news.css">
+    <link type="text/css" href="~/css/navbar.css" rel="stylesheet">
+    <link type="text/css" href="~/css/footer.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Matematik5_0</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Forum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
+<body style="background-color:#f1f1f1">
+    <div id="container">
+
+        <nav>
+            <div id="logo">
+                <img src="~/images/Loco-removebg-preview (1).png" id="img1">
+                <div class="logotext">
+                    <h1>Matematikfætteren</h1>
                 </div>
             </div>
+            <ul class="leftlist">
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">Forum</a></li>
+                <li>
+                    
+                    <div class="dropdown">
+                        <button class="dropbtn">Opgaver</button>
+                        <div class="dropdown-content">
+                            @foreach (var item in Model)
+                            {
+                                <a href="#">@item.Title</a>
+                            }
+                            
+                        </div>
+                    </div>                 
+                </li>
+               
+                <li><a href="#">Leaderboard</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Opret Bruger</a></li>
+                <li><a href="#">Log ind</a></li>
+            </ul>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - Matematik5_0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderBody()
+
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

@@ -7,5 +7,6 @@ namespace Matematik5_0.Models.WebModel
 {
     public class PremiumExcercise
     {
+
     }
 }
