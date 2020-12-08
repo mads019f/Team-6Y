@@ -21,8 +21,10 @@ namespace Matematik5_0.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index ( )
+        public async Task<ActionResult> Index ( )
         {
+            ViewBag.ExcerciseCategory = await _service.GetExcerciseCategoriesAsync();
+            
             return View();
         }
 
@@ -37,11 +39,11 @@ namespace Matematik5_0.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IEnumerable<ExcerciseCategory>> _Layout()
+        public IActionResult RedirectToExcersiceCategories()
         {
-            var excerciseCategory = await _service.GetExcerciseCategoriesAsync();
-
-            return excerciseCategory;
+            return RedirectToAction("Index", "ExcerciseCategories"); 
         }
+
+
     }
 }

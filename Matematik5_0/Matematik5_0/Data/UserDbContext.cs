@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Matematik5_0.Models.WebModel;
 
 namespace Matematik5_0.Data
 {
@@ -14,5 +15,6 @@ namespace Matematik5_0.Data
         {
             Database.Migrate();
         }
+        public DbSet<Matematik5_0.Models.WebModel.ExcerciseCategory> ExcerciseCategory { get; set; }
     }
 }
