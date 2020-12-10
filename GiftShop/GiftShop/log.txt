@@ -1,0 +1,8 @@
+2020-12-10T11:35:51
+REQUEST:
+GET - /
+ContentType: Not specified
+Host: localhost:44308
+RESPONSE:
+Status Code: 200
+
